@@ -3,6 +3,13 @@
 <head>
 <title>Collabthings</title>
 
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <!-- loading the minified version -->
 <script src="https://unpkg.com/ipfs/dist/index.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ipfs/dist/index.min.js"></script>
@@ -42,7 +49,7 @@ crossorigin="anonymous"></script>
 </script>
 
 <script type="text/template" id="ProfileTemplate">
-    <img class="id-img" src="<%= profile.thumbnail %>" alt="<%= profile.name %>">
+    <img class="id-img" src="<%= profile.thumbnail %>">
 	<h1><%= profile.name %></h1>
     <h2 class="id-publickey">Your ID</h3>
 	<p><%= identityid %></p>
@@ -57,10 +64,16 @@ crossorigin="anonymous"></script>
 <div id="profile" >
 </div>
 
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <script src="js/ipfs.js"></script>
 <script src="js/identity.js"></script>
 <script src="js/profile.js"></script>
 
+ 
 </body>
 
 </html>
