@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<title>Collabthings</title>
+
+<!-- loading the minified version -->
+<script src="https://unpkg.com/ipfs/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ipfs/dist/index.min.js"></script>
+
+<!-- loading the human-readable (not minified) version -->
+<script src="https://unpkg.com/ipfs/dist/index.js"></script>
+<script src="https://unpkg.com/ipfs-api@9.0.0/dist/index.js"
+integrity="sha384-5bXRcW9kyxxnSMbOoHzraqa7Z0PQWIao+cgeg327zit1hz5LZCEbIMx/LWKPReuB"
+crossorigin="anonymous"></script>
+ 
+<script src="http://underscorejs.org/underscore-min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cryptico/0.0.1343522940/jsbn.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cryptico/0.0.1343522940/random.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cryptico/0.0.1343522940/hash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cryptico/0.0.1343522940/rsa.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cryptico/0.0.1343522940/aes.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cryptico/0.0.1343522940/api.js"></script>
+
+<script src="js/ipfs.js"></script>
+	
+</head>
+
+<body>
+
+<h1>Collabthings</h1>
+
+<script type="text/template" id="IdentityTemplate">
+    <img class="id-img" src="<%= profile.thumbnail %>" alt="<%= profile.name %>">
+	<h1><%= profile.name %></h1>
+    <h2 class="id-publickey">Your ID</h3>
+	<p><%= identityid %></p>
+
+    <h3 class="id-publickey">Your public key</h3>
+	<pre><%= profile.publickeystring %></pre>
+</script>
+
+<div id="identity" >
+</div>
+
+<script src="js/ipfs.js"></script>
+<script src="js/identity.js"></script>
+
+</body>
+
+</html>
