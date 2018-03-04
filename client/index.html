@@ -41,11 +41,25 @@ crossorigin="anonymous"></script>
 	<pre><%= profile.publickeystring %></pre>
 </script>
 
+<script type="text/template" id="ProfileTemplate">
+    <img class="id-img" src="<%= profile.thumbnail %>" alt="<%= profile.name %>">
+	<h1><%= profile.name %></h1>
+    <h2 class="id-publickey">Your ID</h3>
+	<p><%= identityid %></p>
+
+    <h3 class="id-publickey">Your public key</h3>
+	<pre><%= profile.publickeystring %></pre>
+</script>
+
 <div id="identity" >
+</div>
+
+<div id="profile" >
 </div>
 
 <script src="js/ipfs.js"></script>
 <script src="js/identity.js"></script>
+<script src="js/profile.js"></script>
 
 </body>
 
