@@ -3,14 +3,18 @@
 echo WATCH
 date
 
+log=../ipfs.web.build.log
+
 if OUTPUT=$(rsync -a --info=NAME -ur /git/collabthings.ipfs.web/* .)
 then
     if [ "$OUTPUT" != "" ]                   # got output?
     then
-		echo OUTPUT $OUTPUT
-
-		npm run build >> ../build.log
+		echo OUTPUT $OUTPUT >> $log
 		
+		# npm run build >> ../ipfs.web.build.log
+		npx webpack >> $log 2>&1
+		echo webpack done >> $log 2>&1
+
 		sleep 10
 		
 		buildexit=$?

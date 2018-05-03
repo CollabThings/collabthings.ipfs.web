@@ -19,7 +19,7 @@ function CProfile()
 				console.log("load error " + err);
 				console.log("profile url " + data.url);
 				$.get(data.url, function(data) {
-					me.parseData(data);
+					me.parseData(data, callback);
 				});
 			});
 
@@ -31,8 +31,6 @@ function CProfile()
 		
 		me.data.profile = JSON.parse(data);
 		me.data.profile.publickeystring = splitter(me.data.profile.publickeystring, 40);
-			
-		setProfileData(me.data);		
 	}
 	
 	var url = new URL(window.location.href);
@@ -41,10 +39,6 @@ function CProfile()
 	this.load(profileid);
 };
 
-function setProfileData(data) {
-	console.log("set profile data");
-	var profiletmpl = _.template($('#ProfileTemplate').html());
-	$("#profile").append(profiletmpl(data));
-}	
+var profile = new CProfile();
 
-new CProfile();
+

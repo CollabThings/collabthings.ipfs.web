@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "collabthings-ipfs-web",
   "scripts": {
-    "build": "npm install; gulp;",
+    "build": "npm install;",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Juuso Vilmunen <> ()",
@@ -12,9 +12,18 @@
   ],
   "license": "GPL",
   "dependencies": {
-    "ipfs": "^0.28.0"
+    "buffer": "^5.1.0",
+    "express": "^4.16.3",
+    "ipfs": "^0.28.0",
+    "lodash": "^4.17.10",
+    "sleep": "^5.1.1",
+    "vue-loader": "^15.0.5",
+    "vue-template-compiler": "^2.5.16"
   },
   "devDependencies": {
-    "browserify": "^14.5.0"
+    "browserify": "^14.5.0",
+    "unminified-webpack-plugin": "^2.0.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.1.2"
   }
 }
