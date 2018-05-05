@@ -2,6 +2,7 @@ var UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 const {
   VueLoaderPlugin
 } = require('vue-loader')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = {
   module: {
@@ -19,7 +20,10 @@ const config = {
   },
   plugins: [
     new UnminifiedWebpackPlugin(),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new CopyWebpackPlugin([
+            { from: './static' }
+        ])
   ]
 };
 

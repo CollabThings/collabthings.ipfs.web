@@ -1,3 +1,5 @@
+var cryptico = require("cryptico");
+
 export {
 	getIdentity,
 	getSecret
@@ -21,7 +23,8 @@ function serializeRSAKey(key) {
 
 function deserializeRSAKey(key) {
 	let json = JSON.parse(key);
-	let rsa = new RSAKey();
+	
+	let rsa = new cryptico.RSAKey();
 	rsa.setPrivateEx(json.n, json.e, json.d, json.p, json.q, json.dmp1, json.dmq1, json.coeff);
 	return rsa;
 }

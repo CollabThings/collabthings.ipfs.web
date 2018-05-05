@@ -5,7 +5,7 @@ date
 
 log=../ipfs.web.build.log
 
-if OUTPUT=$(rsync -a --info=NAME -ur /git/collabthings.ipfs.web/* .)
+if OUTPUT=$(rsync -a --info=NAME --exclude=target -ur /git/collabthings.ipfs.web/* .)
 then
     if [ "$OUTPUT" != "" ]                   # got output?
     then
@@ -15,10 +15,11 @@ then
 		npx webpack >> $log 2>&1
 		echo webpack done >> $log 2>&1
 
-		sleep 10
-		
 		buildexit=$?
-		
+
+		mkdir -p /git/collabthings.ipfs.web/target/ >> $log 2>&1
+		cp -ruv client/* /git/collabthings.ipfs.web/target/ >> $log 2>&1
+
 		echo exit code "${buildexit}"
 		if [ "0" == "${buildexit}" ]; then
 			echo OK?
@@ -28,7 +29,7 @@ then
 			echo FAIL?
 			rm error.log
 			cat *.log > error.log
-			sleep 1
+			sleep 5
 		fi
 	else
 		if [ -f error.log ]; then cat error.log; fi
