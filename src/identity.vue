@@ -9,20 +9,25 @@
 				    <label class="control-label col-sm-2" >Username:</label>
 				    <input v-model="profile.name" type="text"  />
 				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-2" >Image URL:</label>
+				    <input v-model="profile.thumbnail" type="text"  />
+				  </div>
 				  <button v-on:click="apply">Apply</button>
 				</form>
 			</div>
 		</div>
 		
 		<div class="row">	
-			<div class="col-sm-12">		
-			    <img class="id-img" :src="profile.thumbnail" :alt="profile.name">
+			<div v-if="profile.loaded" class="col-sm-12">		
+			    <img class="id-img" :src="profile.thumbnail" >
 				<h1>{{ profile.name }}</h1>
 			    <h2 class="id-publickey">Your ID</h2>
 				<p>{{ identityid }}</p>
-			
+				<a :href="profile.link">Profile link</a> 			
 			    <h3 class="id-publickey">Your public key</h3>
-				<pre>{{ viewpublickeystring }}</pre>
+				<pre>{{ profile.viewpublickeystring }}</pre>
+
 			</div>
 		</div>	
 	</div>	

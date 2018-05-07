@@ -2,16 +2,31 @@ var UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 const {
   VueLoaderPlugin
 } = require('vue-loader')
+
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = {
   module: {
     rules: [
-      // ... other rules
+    {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
+      },
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
-      }
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            'css': [
+              'vue-style-loader',
+              'css-loader'
+            ]
+          }
+        }
+      }    
     ]
   },
   output: {
@@ -28,3 +43,4 @@ const config = {
 };
 
 module.exports = config;
+

@@ -1,12 +1,15 @@
 var cryptico = require("cryptico");
+import {newProfile} from './profile';
 
 export {
 	getIdentity,
 	getSecret
 };
+
 var Buffer = require('buffer/').Buffer
 
-var PARAM_IDENTITYID = "identityid";
+var PARAM_IDENTITYID = "collabthings.identityid";
+var PARAM_SECRET = "collabthings.secret";
 
 function serializeRSAKey(key) {
 	return JSON.stringify({
@@ -29,21 +32,6 @@ function deserializeRSAKey(key) {
 	return rsa;
 }
 
-function splitter(str, l) {
-	var strs = "";
-	while (str.length > l) {
-		var pos = str.substring(0, l).lastIndexOf(' ');
-		pos = pos <= 0 ? l : pos;
-		strs += str.substring(0, pos) + "\n";
-		var i = str.indexOf(' ', pos) + 1;
-		if (i < pos || i > pos + l)
-			i = pos;
-		str = str.substring(i);
-	}
-	strs += str;
-	return strs;
-}
-
 function CSecret() {
 	var keystring;
 	var rsakey;
@@ -53,7 +41,7 @@ function CSecret() {
 		console.log("saving secert");
 
 		this.data.keystring = this.keystring;
-		localStorage.setItem("secret", JSON.stringify(this.data));
+		localStorage.setItem(PARAM_SECRET, JSON.stringify(this.data));
 	}
 
 	this.getPublicKey = function () {
@@ -92,14 +80,11 @@ function CSecret() {
 function CIdentity() {
 	var me = this;
 	this.data = {};
-	this.data.profile = {};
-	this.data.profile.thumbnail = "image.png";
-	this.data.profile.name = "default name " + Math.random();
-	this.data.profile.publickeystring = "";
-	this.data.viewpublickeystring = "public key";
+	this.profile = newProfile();
+	this.data.profile = this.profile.data;
 	
 	this.updatePublickey = function () {
-		this.data.profile.publickeystring = secret.getPublicKey();
+		this.profile.data.publickeystring = secret.getPublicKey();
 	}
 
 	this.load = function (callback) {
@@ -111,36 +96,23 @@ function CIdentity() {
 		if (identityid != null) {
 			console.log("Loading stored IdentityId " + identityid);
 			var me = this;
-			ipfs.files.cat(identityid, function (err, iddata) {
-				var idurl;
-
-				if (err == null) {
-					var profilecontent = iddata.toString('utf8');
-					me.parseData(profilecontent);
-				} else {
-					idurl = "http://ipfs.io/ipfs/" + identityid;
-					console.log("loading profile url " + idurl);
-					$.get(idurl, function (profiledata) {
-						me.parseData(profiledata);
-					});
-				}
-			});
+			this.profile.load(identityid);
 		} else {
 			this.save();
 			this.getId();
 		}
 	}
 
-	this.parseData = function (profilecontent) {
-		console.log("data content " + profilecontent);
-		this.data.profile = JSON.parse(profilecontent);
-		this.data.viewpublickeystring = splitter(this.data.profile.publickeystring, 40);
-		this.data.profile.publickeystring = this.data.profile.publickeystring.replace(/\\n/g, "");
-	}
-
 	this.save = function () {
+		var profile = this.profile;
+
 		console.log("save profile");
-		var json = JSON.stringify(this.data.profile);
+		
+		var profilecopy = Vue.util.extend({}, profile.data);
+		profilecopy.profileid = null;
+		profilecopy.identity = null;
+
+		var json = JSON.stringify(profilecopy);
 		console.log("profile : " + json);
 		const buffer = Buffer.from(json);
 		ipfs.files.add(buffer, function (err, files) {
@@ -153,6 +125,7 @@ function CIdentity() {
 	this.getId = function () {
 		var id = localStorage.getItem(PARAM_IDENTITYID);
 		this.data.identityid = id;
+		this.profile.data.profileid = id;
 		return id;
 	}
 

@@ -5,25 +5,12 @@ import {getIdentity, getSecret} from './modules/identity';
 
 console.log("Index.js load");
 
-var sitedata = {
-	test: "TETETTE",
-	identity: {
-		name: "jokudefault"
-	},
-	profile: {
-		name: "OU JEE"
-	},
-	knownusers: {},
-	items: {}
-};
-
 const Home = { template: '<div>Home</div>' }
-const User = { template: '#ProfileTemplate' }
 
 const routes = [
 	  { path: '/', component: Home },
 	  { path: '/me', component: require('./identity.vue').default },
-	  { path: '/user', component: User }
+	  { path: '/user/:userid', component: require('./user.vue').default }
 	]
 
 const router = new VueRouter({
@@ -32,7 +19,6 @@ const router = new VueRouter({
 	})
 
 var app = new Vue({
-	router,
-	data: sitedata
+	router
 }).$mount('#app')
 
