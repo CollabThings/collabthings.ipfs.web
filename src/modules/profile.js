@@ -26,12 +26,14 @@ function CProfile(profileid)
 	
 	this.data = {};
 	this.data.profileid = profileid;
-	this.data.thumbnail = "image.png";
-	this.data.name = "default name " + Math.random();
-	this.data.viewpublickeystring = "public key";
-	this.data.publickeystring = "public key";
 	this.data.loaded = false;
 	this.data.link = "link";
+	this.data.viewpublickeystring = "public key";
+
+	this.data.pub = {};
+	this.data.pub.thumbnail = "image.png";
+	this.data.pub.name = "default name " + Math.random();
+	this.data.pub.publickeystring = "public key";
 
 	this.load = function(profileid) {	
 		console.log("load profile " + profileid);
@@ -67,14 +69,27 @@ function CProfile(profileid)
 		
 		var profile = JSON.parse(data);
 
-		Vue.util.extend(me.data, profile);
-		me.data.publickeystring = this.data.publickeystring.replace(/\\n/g, "");
-		me.data.viewpublickeystring = splitter(me.data.publickeystring, 40);
+		delete profile["loaded"];
+		delete profile["link"];
+		delete profile["identityid"];
+		delete profile["profileid"];
+		delete profile["viewpublickeystring"];
+
+		console.log("stripped profile data " + JSON.stringify(profile));
+
+		Vue.util.extend(me.data.pub, profile);
 		
-		me.data.link = "#/user/" + this.data.profileid;
+		me.update();
+
 		me.data.loaded = true;
 	}
-		
+
+	this.update = function() {
+		me.data.pub.publickeystring = this.data.pub.publickeystring.replace(/\\n/g, "");
+		me.data.viewpublickeystring = splitter(me.data.pub.publickeystring, 40);		
+		me.data.link = "#/user/" + this.data.profileid;
+	}
+
 	if(profileid) {
 		this.load(profileid);
 	}

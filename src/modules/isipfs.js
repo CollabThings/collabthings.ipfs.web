@@ -3,5 +3,5 @@ export {
 };
 
 function isipfs() {
-    return typeof variable !== 'undefined'
+    return typeof ipfs !== 'undefined'
 }

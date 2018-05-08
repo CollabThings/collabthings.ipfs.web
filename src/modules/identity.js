@@ -85,7 +85,7 @@ function CIdentity() {
 	this.data.profile = this.profile.data;
 	
 	this.updatePublickey = function () {
-		this.profile.data.publickeystring = secret.getPublicKey();
+		this.profile.data.pub.publickeystring = secret.getPublicKey();
 	}
 
 	this.load = function (callback) {
@@ -109,11 +109,9 @@ function CIdentity() {
 			var profile = this.profile;
 
 			console.log("save profile");
+						 
+			var profilecopy = Vue.util.extend({}, profile.data.pub);
 			
-			var profilecopy = Vue.util.extend({}, profile.data);
-			profilecopy.profileid = null;
-			profilecopy.identity = null;
-
 			var json = JSON.stringify(profilecopy);
 			console.log("profile : " + json);
 			const buffer = Buffer.from(json);
@@ -121,7 +119,11 @@ function CIdentity() {
 				console.log("err " + err);
 				localStorage.setItem(PARAM_IDENTITYID, files[0].hash);
 				console.log("stored profile with id " + me.getId());
+
+				me.profile.update();
 			});
+		} else {
+			console.log("Not connected to ipfs. Not saving.");
 		}
 	}
 

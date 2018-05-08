@@ -7,11 +7,11 @@
 				<form id="profile">
 				  <div class="form-group">
 				    <label class="control-label col-sm-2" >Username:</label>
-				    <input v-model="profile.name" type="text"  />
+				    <input v-model="profile.pub.name" type="text"  />
 				  </div>
 				  <div class="form-group">
 				    <label class="control-label col-sm-2" >Image URL:</label>
-				    <input v-model="profile.thumbnail" type="text"  />
+				    <input v-model="profile.pub.thumbnail" type="text"  />
 				  </div>
 				  <button v-on:click="apply">Apply</button>
 				</form>
@@ -20,8 +20,8 @@
 		
 		<div class="row">	
 			<div v-if="profile.loaded" class="col-sm-12">		
-			    <img class="id-img" :src="profile.thumbnail" >
-				<h1>{{ profile.name }}</h1>
+			    <img class="id-img" :src="profile.pub.thumbnail" >
+				<h1>{{ profile.pub.name }}</h1>
 			    <h2 class="id-publickey">Your ID</h2>
 				<p>{{ identityid }}</p>
 				<a :href="profile.link">Profile link</a> 			
@@ -43,7 +43,7 @@ export default {
 	methods: {
 		apply: function(e) {
 			console.log("got e " + e);
-			console.log("profile name " + getIdentity().save());
+			getIdentity().save();
 		}
 	}
 }

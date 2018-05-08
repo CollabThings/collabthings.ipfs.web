@@ -4,8 +4,8 @@
 
 		<div class="row">	
 			<div v-if="loaded" class="col-sm-12">		
-			    <img class="id-img" :src="thumbnail" :alt="name">
-				<h1>{{ name }}</h1>
+			    <img class="id-img" :src="pub.thumbnail" :alt="pub.name">
+				<h1>{{ pub.name }}</h1>
 			    <h2 class="id-publickey">ID</h2>
 				<p>{{ profileid }}</p>
 			
