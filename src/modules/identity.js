@@ -1,5 +1,6 @@
 var cryptico = require("cryptico");
 import {newProfile} from './profile';
+import {isipfs} from './isipfs';
 
 export {
 	getIdentity,
@@ -104,22 +105,24 @@ function CIdentity() {
 	}
 
 	this.save = function () {
-		var profile = this.profile;
+		if(isipfs()) {
+			var profile = this.profile;
 
-		console.log("save profile");
-		
-		var profilecopy = Vue.util.extend({}, profile.data);
-		profilecopy.profileid = null;
-		profilecopy.identity = null;
+			console.log("save profile");
+			
+			var profilecopy = Vue.util.extend({}, profile.data);
+			profilecopy.profileid = null;
+			profilecopy.identity = null;
 
-		var json = JSON.stringify(profilecopy);
-		console.log("profile : " + json);
-		const buffer = Buffer.from(json);
-		ipfs.files.add(buffer, function (err, files) {
-			console.log("err " + err);
-			localStorage.setItem(PARAM_IDENTITYID, files[0].hash);
-			console.log("stored profile with id " + me.getId());
-		});
+			var json = JSON.stringify(profilecopy);
+			console.log("profile : " + json);
+			const buffer = Buffer.from(json);
+			ipfs.files.add(buffer, function (err, files) {
+				console.log("err " + err);
+				localStorage.setItem(PARAM_IDENTITYID, files[0].hash);
+				console.log("stored profile with id " + me.getId());
+			});
+		}
 	}
 
 	this.getId = function () {

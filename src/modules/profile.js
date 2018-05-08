@@ -1,3 +1,4 @@
+import {isipfs} from './isipfs';
 
 export {
 	getProfile,
@@ -35,29 +36,32 @@ function CProfile(profileid)
 	this.load = function(profileid) {	
 		console.log("load profile " + profileid);
 		if(profileid!=null) {	
-			/*
-			$.get("/ipfs/" + profileid, function(data) {
-				me.parseData(data);
-			});
-			*/
+			if(isipfs()) {
+				ipfs.files.cat(profileid, function(err, profiledata) {
+					console.log("load error " + err);
 
-			ipfs.files.cat(profileid, function(err, profiledata) {
-				console.log("load error " + err);
-
-				if (err == null) {
-					var profilecontent = profiledata.toString('utf8');
-					me.parseData(profilecontent);
-				} else {
-					idurl = "http://ipfs.io/ipfs/" + profileid;
-					console.log("loading profile url " + idurl);
-					$.get(idurl, function (profiledata) {
-						me.parseData(profiledata);
-					});
-				}				
-			});
+					if (err == null) {
+						var profilecontent = profiledata.toString('utf8');
+						me.parseData(profilecontent);
+					} else {
+						loadUrl(profileid);
+					}				
+				});
+			} else {
+				this.loadUrl(profileid);
+			}
 		}
 	}
-	
+
+	this.loadUrl = function(profileid) {
+		var idurl = "http://ipfs.io/ipfs/" + profileid;
+		console.log("loading profile url " + idurl);
+		$.get(idurl, function (profiledata) {
+			me.parseData(profiledata);
+		});
+
+	}
+
 	this.parseData = function(data) {
 		console.log("profile data " + data);
 		
