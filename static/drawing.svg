@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="drawing.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient880"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop876" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop878" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="270.1985"
+     inkscape:cy="826.73635"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1916"
+     inkscape:window-height="1018"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;text-anchor:middle;text-align:center;"
+       x="86.490974"
+       y="75.768951"
+       id="text24"><tspan
+         sodipodi:role="line"
+         id="tspan22"
+         x="86.490974"
+         y="85.132721"
+         style="stroke-width:0.26458332;text-anchor:middle;text-align:center;"></tspan></text>
+    <g
+       id="g956">
+      <text
+         id="text32"
+         y="21.801445"
+         x="60.411064"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;text-anchor:middle;text-align:center;"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332;text-anchor:middle;text-align:center;"
+           y="21.801445"
+           x="38.241875"
+           id="tspan30"
+           sodipodi:role="line">Client</tspan><tspan
+           id="tspan36"
+           style="stroke-width:0.26458332;text-anchor:middle;text-align:center;"
+           y="35.030613"
+           x="38.241875"
+           sodipodi:role="line">software</tspan></text>
+      <rect
+         style="stroke-width:0.26458332;fill-opacity:1;fill:none;stroke:#000000;stroke-opacity:1"
+         y="10.720833"
+         x="31.220833"
+         height="28.310417"
+         width="60.589584"
+         id="rect69" />
+    </g>
+    <g
+       id="g961">
+      <text
+         id="text16"
+         y="54.324909"
+         x="106.47359"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;text-anchor:middle;text-align:center;"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332;text-anchor:middle;text-align:center;"
+           y="54.324909"
+           x="72.909744"
+           id="tspan14"
+           sodipodi:role="line">Local service</tspan></text>
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.20249286;stroke-opacity:1"
+         y="42.307499"
+         x="67.834579"
+         height="17.789173"
+         width="77.584999"
+         id="rect69-3" />
+    </g>
+    <g
+       id="g967">
+      <text
+         id="text20"
+         y="75.768951"
+         x="118.79391"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;text-anchor:middle;text-align:center;"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332;text-anchor:middle;text-align:center;"
+           y="75.768951"
+           x="86.490974"
+           id="tspan18"
+           sodipodi:role="line">Collabthings</tspan><tspan
+           id="tspan28"
+           style="stroke-width:0.26458332;text-anchor:middle;text-align:center;"
+           y="88.998116"
+           x="86.490974"
+           sodipodi:role="line">client </tspan></text>
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.24224268;stroke-opacity:1"
+         y="65.61071"
+         x="82.67112"
+         height="27.539005"
+         width="71.724419"
+         id="rect69-3-6" />
+    </g>
+    <g
+       id="g978">
+      <text
+         id="text12"
+         y="113.57982"
+         x="17.759525"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           y="113.57982"
+           x="17.759525"
+           id="tspan10"
+           sodipodi:role="line">IPFS</tspan></text>
+      <path
+         inkscape:transform-center-y="-0.16352287"
+         inkscape:transform-center-x="-2.1941698"
+         d="m 41.275,108.88124 -14.497294,7.54671 -2.001939,16.22087 -11.657257,-11.45568 -16.0455966,3.10856 7.2927128,-14.62671 -7.9147855,-14.299668 16.1644023,2.41588 11.15399,-11.946249 2.697436,16.119807 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="0.60681647"
+         sodipodi:arg1="-0.021502062"
+         sodipodi:r2="12.305969"
+         sodipodi:r1="24.611938"
+         sodipodi:cy="109.41041"
+         sodipodi:cx="16.66875"
+         sodipodi:sides="5"
+         id="path933"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
+         sodipodi:type="star" />
+    </g>
+    <g
+       id="g973"
+       transform="translate(-52.652083)">
+      <text
+         id="text42"
+         y="129.37906"
+         x="178.99501"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           y="129.37906"
+           x="178.99501"
+           id="tspan40"
+           sodipodi:role="line">Resource</tspan><tspan
+           id="tspan44"
+           style="text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           y="142.60823"
+           x="178.99501"
+           sodipodi:role="line">network</tspan></text>
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.24224268;stroke-opacity:1"
+         y="119.18883"
+         x="143.78989"
+         height="27.539005"
+         width="71.724419"
+         id="rect69-3-6-5" />
+    </g>
+  </g>
+</svg>
